@@ -1,11 +1,7 @@
 from flask import Flask
-from flask_cors import CORS
+from app.routes import api
 
 def create_app():
     app = Flask(__name__)
-    CORS(app)
-
-    from app.routes import api
-    app.register_blueprint(api, url_prefix="/api")
-
+    app.register_blueprint(api, url_prefix="/api")  # 所有 API 端点前面加 /api
     return app
