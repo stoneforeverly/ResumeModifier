@@ -7,4 +7,5 @@ app = Flask(__name__)
 app.register_blueprint(job_api, url_prefix="/jobs")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+        # 允许外部访问，并监听 5000 端口
+    app.run(host="0.0.0.0", port=5000)

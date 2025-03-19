@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 
 # 连接本地 MongoDB
-client = MongoClient("mongodb://localhost:27017/")
+client = MongoClient("mongodb://host.docker.internal:27017/")
 
 # 创建数据库和集合
 db = client["jobSearch"]  # 数据库名称
