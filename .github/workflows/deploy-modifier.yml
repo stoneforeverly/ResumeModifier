@@ -28,12 +28,10 @@ jobs:
 
       - name: Install frontend dependencies
         run: |
-          cd frontend
           npm install
 
       - name: Build frontend
         run: |
-          cd frontend
           npm run build
 
       - name: Configure AWS credentials
@@ -47,7 +45,7 @@ jobs:
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
 
-      - name: Build frontend Docker image
+      - name: Build modifier Docker image
         run: |
           docker build -t ${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }} \
                        -t ${{ env.ECR_REPOSITORY }}:latest .
