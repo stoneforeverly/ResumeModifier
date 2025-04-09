@@ -11,7 +11,7 @@ env:
   KEEP_LAST_IMAGES: 5  #  保留最近5个镜像
 
 jobs:
-  deploy-frontend:
+  deploy-modifier:
     runs-on: ubuntu-latest
     permissions:
       packages: write
@@ -49,7 +49,6 @@ jobs:
 
       - name: Build frontend Docker image
         run: |
-          cd frontend
           docker build -t ${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }} \
                        -t ${{ env.ECR_REPOSITORY }}:latest .
 
