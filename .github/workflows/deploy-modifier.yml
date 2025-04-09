@@ -11,7 +11,7 @@ env:
   KEEP_LAST_IMAGES: 5  # 保留最近5个镜像
 
 jobs:
-  deploy-backend:
+  deploy-modifier:
     runs-on: ubuntu-latest
     permissions:
       packages: write
